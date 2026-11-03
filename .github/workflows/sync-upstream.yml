@@ -1,8 +1,12 @@
 name: Sync Upstream
 
 on:
-  schedule:
-    - cron: "17 3 * * *"
+  # 已关闭定时自动同步。
+  # 本仓库已迁移到 OpenNext 并深度定制（lib/db、lib/auth、17 个路由的 runtime 声明），
+  # 上游仍是 next-on-pages 版本：自动 merge 要么冲突，要么把定制改动回退，
+  # 回退后再触发部署会直接搞挂线上。需要同步时手动运行并人工解决冲突。
+  # schedule:
+  #   - cron: "17 3 * * *"
   workflow_dispatch:
 
 permissions:
