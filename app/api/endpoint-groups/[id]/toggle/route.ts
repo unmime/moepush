@@ -3,9 +3,6 @@ import { auth } from "@/lib/auth"
 import { getDb } from "@/lib/db"
 import { endpointGroups } from "@/lib/db/schema/endpoint-groups"
 import { eq, and } from "drizzle-orm"
-
-export const runtime = 'edge'
-
 export async function POST(
   request: Request,
   { params }: { params: Promise<{ id: string }> }

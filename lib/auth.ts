@@ -24,10 +24,13 @@ export const {
             strategy: "jwt",
         },
         providers: [
-            GithubProvider({
-                clientId: process.env.AUTH_GITHUB_ID!,
-                clientSecret: process.env.AUTH_GITHUB_SECRET!,
-            }),
+            // GitHub 登录仅在配置了凭据时启用；没配就用用户名密码登录
+            ...(process.env.AUTH_GITHUB_ID && process.env.AUTH_GITHUB_SECRET
+                ? [GithubProvider({
+                    clientId: process.env.AUTH_GITHUB_ID,
+                    clientSecret: process.env.AUTH_GITHUB_SECRET,
+                })]
+                : []),
             CredentialsProvider({
                 name: "credentials",
                 credentials: {

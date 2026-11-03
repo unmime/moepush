@@ -5,9 +5,6 @@ import { channels } from "@/lib/db/schema/channels"
 import { eq } from "drizzle-orm"
 import { Channel } from "@/lib/channels"
 import { EndpointsTabs } from "@/components/endpoints-tabs"
-
-export const runtime = "edge"
-
 async function getEndpoints(userId: string) {
   const db = await getDb()
   return db.query.endpoints.findMany({

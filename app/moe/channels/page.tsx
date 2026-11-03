@@ -5,9 +5,6 @@ import { getDb } from "@/lib/db"
 import { channels } from "@/lib/db/schema/channels"
 import { eq } from "drizzle-orm"
 import type { Channel } from "@/lib/channels"
-
-export const runtime = "edge"
-
 async function getChannels(userId: string) {
   const db = await getDb()
   return db.query.channels.findMany({

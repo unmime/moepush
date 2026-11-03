@@ -3,9 +3,6 @@ import { ArrowRight, MessageSquare, Zap, Shield, Heart, Sparkles } from "lucide-
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { SiteHeader } from "@/components/site-header";
-
-export const runtime = "edge";
-
 export default async function Home() {
   const session = await auth();
 

@@ -4,9 +4,6 @@ import { channels, insertChannelSchema } from "@/lib/db/schema/channels"
 import { and, eq } from "drizzle-orm"
 import { NextResponse } from "next/server"
 import { z } from "zod"
-
-export const runtime = "edge"
-
 export async function PATCH(
   req: Request,
   { params }: { params: Promise<{ channelId: string }> }

@@ -3,9 +3,6 @@ import { getDb } from "@/lib/db"
 import { endpoints } from "@/lib/db/schema/endpoints"
 import { and, eq } from "drizzle-orm"
 import { NextResponse } from "next/server"
-
-export const runtime = "edge"
-
 export async function POST(
   req: Request,
   { params }: { params: Promise<{ endpointId: string }> }

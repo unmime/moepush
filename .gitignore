@@ -48,3 +48,6 @@ next-env.d.ts
 .wrangler
 .dev.vars
 wrangler.json
+# OpenNext 构建产物
+.open-next/
+.vercel/

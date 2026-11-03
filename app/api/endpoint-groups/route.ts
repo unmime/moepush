@@ -6,9 +6,6 @@ import { endpoints } from "@/lib/db/schema/endpoints"
 import { eq, and, inArray } from "drizzle-orm"
 import { generateId } from "@/lib/utils"
 import { z } from "zod"
-
-export const runtime = 'edge'
-
 export async function GET() {
   try {
     const session = await auth()
